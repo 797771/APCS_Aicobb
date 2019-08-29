@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=red\ green\ blue
+comment0.target=APCSColor(float,\ float,\ float)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ APCSColor\r\n
+numComments=1

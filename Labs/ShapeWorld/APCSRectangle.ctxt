@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=leftX\ topY\ rightX\ bottomY
+comment0.target=APCSRectangle(int,\ int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ APCSRectangle\r\n
+numComments=1

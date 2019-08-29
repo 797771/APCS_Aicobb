@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=width\ height
+comment0.target=CanvasComponent(int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanvasComponent\r\n
+comment1.params=graphicsContext
+comment1.target=void\ paintComponent(java.awt.Graphics)
+comment2.params=drawableShape
+comment2.target=void\ addDrawableShape(DrawableShape)
+numComments=3
