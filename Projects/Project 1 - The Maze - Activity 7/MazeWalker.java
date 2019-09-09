@@ -41,20 +41,20 @@ public class MazeWalker
                     mazeBot.turnLeft();
                     mazeBot.turnLeft();
                     if(mazeBot.canMoveForward()==false){
-                        mazeBot.turnRight();
+                        mazeBot.turnLeft();
+                        mazeBot.moveForward();
                         mazeBot.setBreadCrumbObject(crumb1);
                     }
                 }
             }
 
-            if(mazeBot.didReachGoal()==true)
-            {
-                mazeBot.signalSuccess();
-            }
-            else{
-                mazeBot.signalError();
-            }
+        }
 
+        if(mazeBot.didReachGoal()==true){
+            mazeBot.signalSuccess();
+        }
+        else{
+            mazeBot.signalError();
         }
     }
 
