@@ -7,5 +7,11 @@
  */
 public class BreadCrumb
 {
-    public void setBreadCrumbObject
+    public void setBreadCrumbObject(){
+
+    }
+
+    public void getBreadCrumbObject(){
+
+    }
 }

@@ -1,4 +1,5 @@
 #BlueJ package file
+<<<<<<< HEAD
 editor.fx.0.height=738
 editor.fx.0.width=816
 editor.fx.0.x=552
@@ -14,6 +15,26 @@ package.editor.y=226
 package.frame.height=600
 package.frame.width=800
 package.numDependencies=0
+=======
+dependency1.from=MazeWalker
+dependency1.to=BreadCrumb
+dependency1.type=UsesDependency
+editor.fx.0.height=734
+editor.fx.0.width=812
+editor.fx.0.x=234
+editor.fx.0.y=-18
+objectbench.height=66
+objectbench.width=475
+package.divider.horizontal=0.6
+package.divider.vertical=0.6769911504424779
+package.editor.height=146
+package.editor.width=386
+package.editor.x=0
+package.editor.y=68
+package.frame.height=302
+package.frame.width=511
+package.numDependencies=1
+>>>>>>> 6039acd7e21b32c9a737759a1db039a708f131c0
 package.numTargets=2
 package.showExtends=true
 package.showUses=true
