@@ -2,10 +2,10 @@
 dependency1.from=Exec
 dependency1.to=MMMRunner
 dependency1.type=UsesDependency
-editor.fx.0.height=589
-editor.fx.0.width=654
-editor.fx.0.x=1
-editor.fx.0.y=22
+editor.fx.0.height=692
+editor.fx.0.width=1292
+editor.fx.0.x=-6
+editor.fx.0.y=-6
 objectbench.height=94
 objectbench.width=614
 package.divider.horizontal=0.6
