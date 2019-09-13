@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=DigitArrayClass
+comment0.text=\r\n\ DigitArrayClass\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/12)\r\n
+comment1.params=
+comment1.target=DigitArrayClass()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DigitArrayClass\r\n
+comment2.params=
+comment2.target=void\ loadArray()
+comment3.params=
+comment3.target=void\ getDigits()
+numComments=4
