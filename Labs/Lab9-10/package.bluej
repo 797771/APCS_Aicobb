@@ -2,25 +2,16 @@
 dependency1.from=Exec
 dependency1.to=MMMRunner
 dependency1.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
-objectbench.height=94
+editor.fx.0.height=441
+editor.fx.0.width=569
+editor.fx.0.x=36
+editor.fx.0.y=153
+objectbench.height=184
 objectbench.width=614
-=======
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=69
-editor.fx.0.y=98
-objectbench.height=182
-objectbench.width=610
->>>>>>> 4f57c7db79fe188296e82408d5628041fddf342a
 package.divider.horizontal=0.6
-package.divider.vertical=0.676923076923077
-package.editor.height=389
-package.editor.width=520
+package.divider.vertical=0.676271186440678
+package.editor.height=392
+package.editor.width=525
 package.editor.x=0
 package.editor.y=0
 package.frame.height=685

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Question4
+comment0.text=\r\n\ Question4\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/13)\r\n
+comment1.params=
+comment1.target=Question4()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Question4\r\n
+comment2.params=x
+comment2.target=int\ getLength(int)
+comment3.params=y
+comment3.target=int\ getSum(int)
+numComments=4

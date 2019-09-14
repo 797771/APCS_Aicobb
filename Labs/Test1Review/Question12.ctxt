@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Question12
+comment0.text=\r\n\ Question12\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/13)\r\n
+comment1.params=
+comment1.target=Question12()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Question12\r\n
+comment2.params=origArray
+comment2.target=int[]\ copyArray(int[])
+comment3.params=newArray
+comment3.target=void\ printArray(int[])
+numComments=4

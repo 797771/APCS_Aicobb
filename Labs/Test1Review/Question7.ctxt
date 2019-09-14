@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Question7
+comment0.text=\r\n\ Question7\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/13)\r\n
+comment1.params=
+comment1.target=Question7()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Question7\r\n
+comment2.params=
+comment2.target=java.lang.String\ equal()
+numComments=3

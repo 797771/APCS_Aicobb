@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Numbers
+comment0.text=\r\n\ Numbers\r\n\r\n\ this\ class\ is\ for\ question\ 3\r\n\ \r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/13)\r\n
+comment1.params=x\ y
+comment1.target=Numbers(int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Numbers\r\n
+comment2.params=
+comment2.target=int\ multiply()
+numComments=3

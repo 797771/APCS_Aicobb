@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Question5
+comment0.text=\r\n\ Question5\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/13)\r\n
+comment1.params=num
+comment1.target=Question5(int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Question5\r\n
+comment2.params=
+comment2.target=int\ sumDigits()
+numComments=3
