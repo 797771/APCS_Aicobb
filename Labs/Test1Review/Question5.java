@@ -25,7 +25,7 @@ public class Question5
             sum = number;
         }
         else{
-            while(number>0){
+            while(number!=0){
                 sum+=number%10;
                 number= number/10;
             }

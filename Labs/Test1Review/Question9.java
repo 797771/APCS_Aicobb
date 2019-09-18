@@ -20,7 +20,7 @@ public class Question9
     public void loadArray(){
         System.out.print("Question 9) ");
         for(int i=0; i<nums.length;i++){
-            nums[i] = (int)(Math.random()*10) + 1;
+            nums[i] = (int)(Math.random()*10) + 1; //loads array w/ numbers from 1-10
         }
     }
 }
