@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=NestedLoops
+comment0.text=\r\n\ NestedLoops\r\n\r\n\ @author\ (Isabelle\ Cobb)\r\n\ @version\ (9/18)\r\n
+comment1.params=
+comment1.target=NestedLoops()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ NestedLoops\r\n
+comment2.params=
+comment2.target=void\ exampleA()
+comment3.params=
+comment3.target=void\ exampleB()
+numComments=4
