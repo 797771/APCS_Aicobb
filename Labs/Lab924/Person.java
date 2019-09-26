@@ -21,30 +21,33 @@ public class Person
 
     public void parseName(String fullName){
         int comma = fullName.indexOf(",");
+        int firstS = fullName.indexOf(" ");
+        int lastS = fullName.lastIndexOf(" ");
+        
         //format four
-        if((comma == -1) & (fullName.lastIndexOf(" ")==fullName.indexOf(" "))){ //
-            fName = fullName.substring(0,fullName.indexOf(" "));
-            lName = fullName.substring(fullName.indexOf(" ")+1);
+        if((comma == -1) & (lastS == firstS)){
+            fName = fullName.substring(0,firstS);
+            lName = fullName.substring(firstS+1);
         }
         
         //format three
-        if((comma == -1) & (fullName.lastIndexOf(" ")!=fullName.indexOf(" "))){
-            fName = fullName.substring(0,fullName.indexOf(" "));
-            mName = fullName.substring((fullName.indexOf(" ")+1), fullName.lastIndexOf(" "));
-            lName = fullName.substring(fullName.lastIndexOf(" ")+1);
+        if((comma == -1) & (lastS !=firstS)){
+            fName = fullName.substring(0,firstS);
+            mName = fullName.substring((firstS+1), lastS);
+            lName = fullName.substring(lastS+1);
         }
         
         //format one
-        if((comma != -1) & (fullName.lastIndexOf(" ")!=fullName.indexOf(" "))){
-            lName = fullName.substring(0,fullName.indexOf(","));
-            fName = fullName.substring((fullName.indexOf(" ")+1), fullName.lastIndexOf(" "));
-            mName = fullName.substring(fullName.lastIndexOf(" ")+1);
+        if((comma != -1) & (lastS !=firstS)){
+            lName = fullName.substring(0,comma);
+            fName = fullName.substring((firstS+1), lastS);
+            mName = fullName.substring(lastS+1);
         }
         
         //format two
-        if((comma != -1) & (fullName.lastIndexOf(" ")==fullName.indexOf(" "))){
-            lName = fullName.substring(0,fullName.indexOf(","));
-            fName = fullName.substring(fullName.indexOf(" ")+1);
+        if((comma != -1) & (lastS==firstS)){
+            lName = fullName.substring(0,comma);
+            fName = fullName.substring(firstS+1);
         }
         
         System.out.println();
