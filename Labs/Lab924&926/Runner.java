@@ -14,6 +14,8 @@ public class Runner{
         String inputStr = "";
 
         Person[] personArray = new Person[2];
+        Person[] newPersonArray = personArray;
+        int i = 0;
 
         while(!inputStr.equals("quit")){
             System.out.println("Enter a name or type \"quit\" to quit");
@@ -25,21 +27,27 @@ public class Runner{
                 Person p = new Person(inputStr);
 
                 //loads person objects into an array
-                for(int i = 0; i<personArray.length; i++){
-                    personArray[i] = p;
+                newPersonArray[i++] = p;
+                printNames(newPersonArray);
+
+                if(personArray[personArray.length-1] != null){
+                    System.out.println("\nWould you like to add more names? Enter \"yes\" or \"no\".");
+                    inputStr = kb.nextLine();
+                    
+                    if(inputStr.equals("yes")){
+                        newPersonArray = extendArray(personArray, 10);
+                    }
 
                 }
-
-                
             }
         }
 
     }
 
     //extends 1st array of names
-    public Person[] extendArray(Person[] personArray, int n){
+    public static Person[] extendArray(Person[] personArray, int n){
         Person[] personArray2 = new Person[personArray.length + n];
-        
+
         for(int i=0;i<personArray.length; i++){
             personArray2[i] = personArray[i];
         }
@@ -48,15 +56,14 @@ public class Runner{
     }
 
     //prints array of names
-    public void printNames(Person[] personArray){
+    public static void printNames(Person[] newPersonArray){
+        System.out.print("\nArray of names: ");
 
-            for(int i = 0;i<personArray.length;i++){
-                System.out.print(personArray[i]+ ", ");
-            }
-        
-
+        for(int i = 0;i<newPersonArray.length;i++){
+            System.out.print(newPersonArray[i].fName + " " + newPersonArray[i].mName + " " + newPersonArray[i].lName + ", ");
+        }
 
     }
-    
+
 }
 
