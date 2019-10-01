@@ -7,18 +7,18 @@
 
 import java.util.Scanner;
 public class Runner{
-
+    static int obInArray = 0;
+    
     public static void main(){
 
         Scanner kb = new Scanner(System.in);
         String inputStr = "";
 
-        Person[] personArray = new Person[2];
-        Person[] newPersonArray = personArray;
+        Person[] personArray = new Person[5];
         int i = 0;
 
         while(!inputStr.equals("quit")){
-            System.out.println("Enter a name or type \"quit\" to quit");
+            System.out.println("\nEnter a name or type \"quit\" to quit");
 
             inputStr = kb.nextLine();
             System.out.println(inputStr);
@@ -27,15 +27,17 @@ public class Runner{
                 Person p = new Person(inputStr);
 
                 //loads person objects into an array
-                newPersonArray[i++] = p;
-                printNames(newPersonArray);
+                obInArray++;
+                personArray[i] = p;
+                printNames(personArray);
+                i++;
 
                 if(personArray[personArray.length-1] != null){
                     System.out.println("\nWould you like to add more names? Enter \"yes\" or \"no\".");
                     inputStr = kb.nextLine();
                     
                     if(inputStr.equals("yes")){
-                        newPersonArray = extendArray(personArray, 10);
+                        personArray = extendArray(personArray, 10);
                     }
 
                 }
@@ -45,22 +47,22 @@ public class Runner{
     }
 
     //extends 1st array of names
-    public static Person[] extendArray(Person[] personArray, int n){
-        Person[] personArray2 = new Person[personArray.length + n];
+    public static Person[] extendArray(Person[] pa1, int n){
+        Person[] pa2 = new Person[pa1.length + n];
 
-        for(int i=0;i<personArray.length; i++){
-            personArray2[i] = personArray[i];
+        for(int i=0;i<pa1.length; i++){
+            pa2[i] = pa1[i];
         }
 
-        return personArray2;
+        return pa2;
     }
 
     //prints array of names
-    public static void printNames(Person[] newPersonArray){
+    public static void printNames(Person[] pa1){
         System.out.print("\nArray of names: ");
 
-        for(int i = 0;i<newPersonArray.length;i++){
-            System.out.print(newPersonArray[i].fName + " " + newPersonArray[i].mName + " " + newPersonArray[i].lName + ", ");
+        for(int i = 0;i<obInArray;i++){
+            System.out.print(pa1[i].fName + " " + pa1[i].mName + " " + pa1[i].lName + ", ");
         }
 
     }

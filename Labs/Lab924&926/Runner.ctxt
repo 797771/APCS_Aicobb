@@ -2,8 +2,8 @@
 comment0.target=Runner
 comment1.params=
 comment1.target=void\ main()
-comment2.params=personArray\ n
+comment2.params=pa1\ n
 comment2.target=Person[]\ extendArray(Person[],\ int)
-comment3.params=newPersonArray
+comment3.params=pa1
 comment3.target=void\ printNames(Person[])
 numComments=4

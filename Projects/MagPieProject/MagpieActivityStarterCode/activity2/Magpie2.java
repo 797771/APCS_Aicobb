@@ -1,3 +1,5 @@
+package MagpieActivityStarterCode.activity2;
+
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -60,7 +62,7 @@ public class Magpie2
             response = "Say something, please.";
         }
         else if(statement.indexOf("life") >= 0){
-            response = "Life can be difficult.";
+            response = "Life can be difficult sometimes.";
         }
         else if(statement.indexOf("school") >= 0){
             response = "Do you like school?";

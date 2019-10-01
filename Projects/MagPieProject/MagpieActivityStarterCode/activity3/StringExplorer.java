@@ -1,3 +1,5 @@
+package MagpieActivityStarterCode.activity3;
+
 /**
  * A program to allow students to try out different 
  * String methods. 
