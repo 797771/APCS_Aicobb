@@ -37,7 +37,7 @@ public class Runner{
                     inputStr = kb.nextLine();
                     
                     if(inputStr.equals("yes")){
-                        personArray = extendArray(personArray, 10);
+                         personArray = extendArray(personArray, 10);
                     }
 
                 }
