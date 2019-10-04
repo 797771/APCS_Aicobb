@@ -136,6 +136,8 @@ public class Magpie3
     {
         return findKeyword(statement, goal, 0);
     }
+    
+    
 
     /**
      * Pick a default response to use if nothing else fits.
