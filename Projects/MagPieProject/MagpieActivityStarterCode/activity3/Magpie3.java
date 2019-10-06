@@ -22,6 +22,8 @@ public class Magpie3
         return "Hello, let's talk.";
     }
 
+    //Have it respond to statements of the form “I something you” with the restructuring “Why do you something me?” 
+
     /**
      * Gives a response to a user statement
      * 
@@ -32,6 +34,7 @@ public class Magpie3
     public String getResponse(String statement)
     {
         String response = "";
+
         if (statement.length() == 0)
         {
             response = "Say something, please.";
@@ -46,6 +49,32 @@ public class Magpie3
         || findKeyword(statement, "brother") >= 0)
         {
             response = "Tell me more about your family.";
+        }
+        else if(findKeyword(statement, "Mrs.")>=0
+        || findKeyword(statement, "Ms.")>=0)
+        {
+            response = "She sounds like a good teacher.";
+        }
+        else if(findKeyword(statement, "Mr.")>=0)
+        {
+            response = "He sounds like a good teacher.";
+        }
+        else if(findKeyword(statement, "dog")>=0
+        || findKeyword(statement, "cat")>=0)
+        {
+            response = "Tell me more about your pets.";
+        }
+        else if(findKeyword(statement, "life")>=0)
+        {
+            response = "Life can be difficult sometimes.";
+        }
+        else if(findKeyword(statement, "school")>=0)
+        {
+            response = "Do you like school?";
+        }
+        else if(findKeyword(statement, "car")>=0)
+        {
+            response = "I love driving!";
         }
         else
         {
@@ -136,8 +165,6 @@ public class Magpie3
     {
         return findKeyword(statement, goal, 0);
     }
-    
-    
 
     /**
      * Pick a default response to use if nothing else fits.
@@ -146,7 +173,7 @@ public class Magpie3
      */
     private String getRandomResponse()
     {
-        final int NUMBER_OF_RESPONSES = 4;
+        final int NUMBER_OF_RESPONSES = 6;
         double r = Math.random();
         int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
         String response = "";
@@ -166,6 +193,14 @@ public class Magpie3
         else if (whichResponse == 3)
         {
             response = "You don't say.";
+        }
+        else if (whichResponse == 4)
+        {
+            response = "What do you mean?";
+        }
+        else if (whichResponse == 5)
+        {
+            response = "I don't understand.";
         }
 
         return response;
