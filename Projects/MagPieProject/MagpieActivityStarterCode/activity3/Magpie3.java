@@ -22,8 +22,6 @@ public class Magpie3
         return "Hello, let's talk.";
     }
 
-    //Have it respond to statements of the form “I something you” with the restructuring “Why do you something me?” 
-
     /**
      * Gives a response to a user statement
      * 
