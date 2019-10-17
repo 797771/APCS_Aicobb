@@ -7,46 +7,51 @@ import java.util.*;
  */
 public class Sort
 {
-    private ArrayList<Integer>list = new ArrayList<Integer>(10000);
+    private static ArrayList<Integer>list = new ArrayList<Integer>();
 
     /**
      * Constructor for objects of class Sort
      */
     public Sort()
     {
-        loadList(list);
-        sortList(list);
+
     }
 
-    public void loadList(ArrayList<Integer> n){
-        for(int i =0; i<n.size(); i++){
+    public static void loadList(ArrayList<Integer> n, int v){
+        System.out.print("Initial list: ");
+        for(int i = 0; i<v; i++){
             n.add((int)(Math.random()*100)+1);
-            System.out.print("Initial list: " + n.get(i) + ", ");
+            System.out.print(n.get(i) + ", ");
         }
     }
 
-    public void sortList(ArrayList<Integer> x){
-        for(int i = 0; i<x.size(); i++){
-            for(int j = 0; j < x.size();j++){
-                if(x.get(j)> x.get(j+1)){
-                    swapList(x, i, j);
+    public static void sortList(ArrayList<Integer> x){
+        System.out.println("\nSorted list: ");
+        for(int i=x.size(); i>=0; i--){
+            for(int j = 0; j<i ;j++){
+                if(j < i-1){
+                    if(x.get(j) > x.get(j+1)){
+                        swapList(x,j);
+                    }
                 }
             }
         }
-        
+
         for(int z = 0; z<x.size(); z++){
-            System.out.print("Sorted list: " + x.get(z) + ", ");
+            System.out.print(x.get(z) + ", ");
         }
+        
     }
-    
-    public void swapList(ArrayList<Integer> y, int i, int j){
-        int temp = y.get(i);
-        y.set(i, y.get(j));
+
+    public static void swapList(ArrayList<Integer> y,int j){
+        int temp = y.get(j+1);
+        y.set(j+1, y.get(j));
         y.set(j, temp);
     }
 
     public static void main(){
-        Sort run = new Sort();
+        loadList(list, 10000);
+        sortList(list);
     }
 }
 
