@@ -20,6 +20,7 @@ public class SortTester
     
     //load arraylist
     public static void loadNumbers(ArrayList<Integer> x, int n){
+        numList.clear();
         for(int i = 0; i<n; i++){
             x.add((int)(Math.random()*100)+1);
         }
@@ -56,14 +57,36 @@ public class SortTester
         swapCount = 0;
         compCount = 0;
         for(int i=1; i<x.size(); i++){
-            for(int j = i; j>0 ;j--){
-                    if(x.get(j) < x.get(j-1)){
-                        swapList(x,j, j-1);
-                        swapCount++;
-                    }
+            int j = i;
+            while(j>0 && (x.get(j) < x.get(j-1))){
+                    swapList(x,j, j-1);
+                    swapCount++;
                     compCount++;
+                    j--;
             }
+            compCount++;
         }
+        System.out.println(x);
+        System.out.println("Swap count: "+ swapCount);
+        System.out.println("Compare count: " + compCount);
+    }
+    
+    //sorts arraylist using selectionsort
+    public static void selectSort(ArrayList<Integer> x){
+        swapCount = 0;
+        compCount = 0;
+        for(int i=0; i<x.size()-1; i++){
+            int index = i;
+            for(int j=i+1;j<x.size();j++){
+                if(x.get(j) < x.get(index)){
+                    index = j;
+                }
+                compCount++;
+            }
+            swapList(x, index, i);
+            swapCount++;
+        }
+        
         System.out.println(x);
         System.out.println("Swap count: "+ swapCount);
         System.out.println("Compare count: " + compCount);
@@ -78,9 +101,13 @@ public class SortTester
         bubbleSort(numList);
         
         //prints results for insertionsort
-        numList.clear();
         loadNumbers(numList, 10);
         System.out.println("\nInsertion-Sorted ArrayList: ");
         insertSort(numList);
+        
+        //prints results for insertionsort
+        loadNumbers(numList, 10);
+        System.out.println("\nSelection-Sorted ArrayList: ");
+        selectSort(numList);
     }
 }
