@@ -19,7 +19,7 @@ public class StringCheck
         Scanner kb = new Scanner(System.in);
         ArrayList<String> orig = new ArrayList<String>();
         System.out.println("Type in a list of words, entering each word after you type it.\nWhen you are done entering words, enter \"done\" and input a key word.");
-        String inputStr = kb.nextLine();
+        String inputStr = "";
         String kWord = "";
         while(!inputStr.equals("done")){
             inputStr = kb.nextLine();
@@ -30,17 +30,18 @@ public class StringCheck
             String inputKey = kb.nextLine();
             kWord = inputKey;
         }
-        
+
         String[] wordC = new String[orig.size()];
         for(int i =0; i <orig.size();i++){
             wordC[i] = orig.get(i);
         }
-        
+
         wordChecker(wordC, kWord);
         wordChecker(orig, kWord);
-        
+
     }
 
+    //array into an arraylist
     public static ArrayList<String> wordChecker(String[] str, String key){
         ArrayList<String> list = new ArrayList<String>();
         for(int i = 0; i<str.length;i++){
@@ -50,41 +51,27 @@ public class StringCheck
         }
         System.out.print("\nArray in, ArrayList out: ");
         for(int i = 0;i<list.size();i++){
-            System.out.println(list.get(i) + ", ");
+            System.out.print(list.get(i) + ", ");
         }
         return list;
     }
 
+    //arraylist into an array
     public static String[] wordChecker(ArrayList<String> str, String Key){
-        int numKey = 0;
+        String[] list2 = new String[str.size()];
         for(int i = 0; i<str.size(); i++){
-            if(str.get(i).length() == Key.length()){
-                if(str.get(i)== Key){
-                    numKey++;
-                }
-            }
-            if (str.get(i).indexOf(Key)!=-1){
-                numKey++;
+            if(str.get(i).indexOf(Key)!=-1){
+                list2[i] = (str.get(i));
             }
         }
-        
-        String[] list2 = new String[numKey];
-        for(int i = 0; i<str.size(); i++){
-            if(str.get(i).length() == Key.length()){
-                if(str.get(i) == Key){
-                    list2[i] = str.get(i);
-                }
-            }
-             if(str.get(i).indexOf(Key)!=-1){
-                list2[i] = str.get(i);
-            }
-        }
-        
+
         System.out.print("\nArrayList in, Array out: ");
         for(int i = 0;i<list2.length;i++){
-            System.out.println(list2[i] + ", ");
+            if(list2[i] != null){
+                System.out.print(list2[i] + ", ");
+            }
         }
         return list2;
     }
-    
+
 }
