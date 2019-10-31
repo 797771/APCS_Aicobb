@@ -27,13 +27,12 @@ public class Sort
 
     public static void sortList(ArrayList<Integer> x){
         System.out.println("\nSorted list: ");
-        for(int i=x.size(); i>=0; i--){
+        for(int i=x.size()-1; i>0; i--){
             for(int j = 0; j<i ;j++){
-                if(j < i-1){
                     if(x.get(j) > x.get(j+1)){
                         swapList(x,j);
                     }
-                }
+                
             }
         }
 
