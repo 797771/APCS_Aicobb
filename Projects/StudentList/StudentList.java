@@ -8,7 +8,7 @@ import java.util.*;
 public class StudentList
 {
     private static ArrayList<Student> studList = new ArrayList<Student>();
-    
+
     /**
      * Constructor for objects of class StudentList
      */
@@ -31,65 +31,77 @@ public class StudentList
         String inputName = "";
         int inputNum;
         double inputGPA;
-        
+
         System.out.print("Student name: ");
         inputName = kb.nextLine();
-        
+
         System.out.print("Student number: ");
         inputNum = kb.nextInt();
-        
+
         System.out.print("Student GPA: ");
         inputGPA = kb.nextDouble();
-        
+
         Student studListOb = new Student(inputName, inputNum, inputGPA);
         studList.add(studListOb);
-           
+
     }
-    
+
     /*
      * Clears the screen and then prints the list to the screen.  
      * Does not print null records
      */
     public void printList(){
+
         for(int i = 0; i<studList.size(); i++){
-            System.out.print(studList.get(i) + "/n" );
+            if(studList.get(i) != null){
+                System.out.println("Student Name: " + studList.get(i).getName() + ", Student Number: " + studList.get(i).getNum() + ", Student GPA: " + studList.get(i).getGPA());
+            }
         }
+
+    }
+
+    /*
+     * will take a String and Student Object 
+     * and set the instance variables in the student 
+     * object according to the user input string. 
+     * (e.g. firstName, middleName, and lastName)
+     */
+    public void parseUserInput(String fullName, Student stud){
         
     }
-    
-    
+
     //parses out inputed student name
-    /*public void parseName(String fullName){
+    public void parseName(String fullName){
         int comma = fullName.indexOf(",");
         int firstS = fullName.indexOf(" ");
         int lastS = fullName.lastIndexOf(" ");
-        
+
         //format four
         if((comma == -1) & (lastS == firstS)){
             fName = fullName.substring(0,firstS);
             lName = fullName.substring(firstS+1);
         }
-        
+
         //format three
         if((comma == -1) & (lastS !=firstS)){
             fName = fullName.substring(0,firstS);
             mName = fullName.substring((firstS+1), lastS);
             lName = fullName.substring(lastS+1);
         }
-        
+
         //format one
         if((comma != -1) & (lastS !=firstS)){
             lName = fullName.substring(0,comma);
             fName = fullName.substring((firstS+1), lastS);
             mName = fullName.substring(lastS+1);
         }
-        
+
         //format two
         if((comma != -1) & (lastS==firstS)){
             lName = fullName.substring(0,comma);
             fName = fullName.substring(firstS+1);
         }
-        
+
     }
-    */
+
 }

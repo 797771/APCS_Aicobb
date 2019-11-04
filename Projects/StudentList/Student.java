@@ -23,10 +23,14 @@ public class Student
        stuNumber = num;
        gpa = GPA;
     }
-    
-   
-    
-   
 
-
+    public String getName(){
+        return fullName;
+    }
+    public int getNum(){
+        return stuNumber;
+    }
+    public double getGPA(){
+        return gpa;
+    }
 }

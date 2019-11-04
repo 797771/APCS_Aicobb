@@ -6,4 +6,6 @@ comment1.target=StudentListRunner()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StudentListRunner\r\n
 comment2.params=
 comment2.target=void\ menuNumber()
-numComments=3
+comment3.params=
+comment3.target=void\ main()
+numComments=4

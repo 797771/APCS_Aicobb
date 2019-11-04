@@ -12,10 +12,10 @@ public class StudentListRunner
      */
     public StudentListRunner()
     {
-        
+        menuNumber();
     }
 
-    public static void menuNumber(){
+    public void menuNumber(){
         StudentList studList = new StudentList();
         Scanner kb = new Scanner(System.in);
         String inputStr= "";
@@ -35,4 +35,7 @@ public class StudentListRunner
         }
     }
     
+    public static void main(){
+        StudentListRunner studListRun = new StudentListRunner();
+    }
 }
