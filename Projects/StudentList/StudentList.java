@@ -14,12 +14,12 @@ public class StudentList
      */
     public StudentList()
     {
-
+       
     }
 
     /**
      * Allows the user to add a student to the end of the List.  
-     * For each student, the user can imput a student number, a GPA, 
+     * For each student, the user can input a student number, a GPA, 
      * and a student name.  Names may be entered in one of four formats::   
     1. Last, First  
     2. Last, First Middle   
@@ -59,5 +59,26 @@ public class StudentList
         }
 
     }
+    
+    /*
+     * Allows the user to specify a Student last name deleted from the list.  
+     */
+    public void deleteStudentFromList(String lName){
+        
+        for(int i = 0; i<studList.size();i++){
+            if(lName.equals(studList.get(i).getLastName())){
+                studList.remove(i);
+            }
+        }
+        
+    }
+    
+    /*
+     *   Allows the user to specify a student number and deletes that student from the list.
+     */
+    //public void deleteStudentFromList(int stuNumber){
+        //stuNumber = getStudID;
+        
+    //}
 
 }

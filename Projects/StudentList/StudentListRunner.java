@@ -29,9 +29,15 @@ public class StudentListRunner
             if(inputStr.equals("1")){
                 studList.addStudent();
             }
+            if(inputStr.equals("2")){
+                System.out.print("\nStudent's Last Name: ");
+                String inputLName = kb.nextLine();
+                studList.deleteStudentFromList(inputLName);
+            }
             if(inputStr.equals("3")){
                 studList.printList();
             }
+            
         }
     }
     

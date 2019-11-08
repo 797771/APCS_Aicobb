@@ -48,6 +48,14 @@ public class Student
         return name;
     }
     
+    public String getLastName(){
+       parseUserInput(fullName);
+       return lName;
+    }
+    public int getStudID(){
+        return stuNumber;
+    }
+    
     /*
      * will take a String and Student Object 
      * and set the instance variables in the student 
