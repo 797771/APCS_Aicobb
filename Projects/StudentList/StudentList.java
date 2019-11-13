@@ -227,4 +227,46 @@ public class StudentList
         }
     }
 
+    public void clearScreen(){
+       System.out.print('\u000C');
+    }
+    
+    public ArrayList<Student> filterSearchStudentList(int key){//stuNum
+        ArrayList<Student> keyList = new ArrayList<Student>();
+        int existVal = 0;
+        
+        for(int i = 0; i<studList.size(); i++){
+            if(studList.get(i).getNum() <= key){
+                keyList.add(studList.get(i));
+            }
+            if(studList.get(i).getNum() > key || key != studList.get(i).getNum()){
+                existVal++;
+            }
+        }
+        if(existVal == studList.size()){
+            System.out.println("\nNo such student exists.");
+        }
+        
+        return keyList;
+    }
+    
+    public ArrayList<Student> filterSearchStudentList(double key){//stuGPA
+        ArrayList<Student> keyList = new ArrayList<Student>();
+        int existVal = 0;
+        
+        for(int i = 0; i<studList.size(); i++){
+            if(key <= studList.get(i).getGPA()){
+                keyList.add(studList.get(i));
+            }
+            if(studList.get(i).getGPA() > key || key != studList.get(i).getGPA()){
+                existVal++;
+            }
+        }
+        if(existVal == studList.size()){
+            System.out.println("\nNo such student exists.");
+        }
+        
+        return keyList;
+    }
+   
 }
