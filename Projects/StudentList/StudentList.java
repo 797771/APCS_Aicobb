@@ -228,45 +228,57 @@ public class StudentList
     }
 
     public void clearScreen(){
-       System.out.print('\u000C');
+        System.out.print('\u000C');
     }
-    
+
     public ArrayList<Student> filterSearchStudentList(int key){//stuNum
         ArrayList<Student> keyList = new ArrayList<Student>();
         int existVal = 0;
-        
+
         for(int i = 0; i<studList.size(); i++){
             if(studList.get(i).getNum() <= key){
-                keyList.add(studList.get(i));
+                Student keyListOb = new Student(studList.get(i).getName(), studList.get(i).getNum(), studList.get(i).getGPA());
+                keyList.add(keyListOb);
             }
-            if(studList.get(i).getNum() > key || key != studList.get(i).getNum()){
+            else{
                 existVal++;
             }
         }
         if(existVal == studList.size()){
             System.out.println("\nNo such student exists.");
         }
-        
+
+        for(int i =0; i<keyList.size();i++){
+            System.out.println("Student Name: " + keyList.get(i).getName() + ", Student Number: " + 
+                keyList.get(i).getNum() + ", Student GPA: " + keyList.get(i).getGPA());
+        }
+
         return keyList;
     }
-    
+
     public ArrayList<Student> filterSearchStudentList(double key){//stuGPA
         ArrayList<Student> keyList = new ArrayList<Student>();
         int existVal = 0;
-        
+
         for(int i = 0; i<studList.size(); i++){
-            if(key <= studList.get(i).getGPA()){
-                keyList.add(studList.get(i));
+            if(studList.get(i).getGPA() <= key){
+                Student keyListOb = new Student(studList.get(i).getName(), studList.get(i).getNum(), studList.get(i).getGPA());
+                keyList.add(keyListOb);
             }
-            if(studList.get(i).getGPA() > key || key != studList.get(i).getGPA()){
+            else{
                 existVal++;
             }
         }
         if(existVal == studList.size()){
             System.out.println("\nNo such student exists.");
         }
-        
+
+        for(int i =0; i<keyList.size();i++){
+            System.out.println("Student Name: " + keyList.get(i).getName() + ", Student Number: " + 
+                keyList.get(i).getNum() + ", Student GPA: " + keyList.get(i).getGPA());
+        }
+
         return keyList;
     }
-   
+
 }
