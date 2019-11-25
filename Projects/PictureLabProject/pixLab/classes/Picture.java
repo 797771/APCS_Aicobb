@@ -231,4 +231,15 @@ public class Picture extends SimplePicture
     beach.explore();
   }
   
+  public void keepOnlyBlue(){
+      Pixel[][] pixels = this.getPixels2D();
+      for(Pixel[] rowArray : pixels){
+          for(Pixel pixelObj : rowArray){
+              pixelObj.setRed(0);
+              pixelObj.setGreen(0);
+            }
+        }
+    }
+  
+    
 } // this } is the end of class Picture, put all new methods before this

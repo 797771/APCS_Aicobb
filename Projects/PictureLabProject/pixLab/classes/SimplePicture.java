@@ -350,7 +350,9 @@ public class SimplePicture implements DigitalPicture
   * @return a two-dimensional array of Pixel objects in row-major order.
   */
  public Pixel[][] getPixels2D()
- {
+ { 
+
+   
    int width = getWidth();
    int height = getHeight();
    Pixel[][] pixelArray = new Pixel[height][width];
