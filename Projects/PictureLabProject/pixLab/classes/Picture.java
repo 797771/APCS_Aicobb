@@ -121,7 +121,7 @@ public class Picture extends SimplePicture
     }
 
     /** Mirror just part of a picture of a temple */
-    public void mirrorTemple()
+    public int mirrorTemple()
     {
         int mirrorPoint = 276;
         Pixel leftPixel = null;
@@ -140,8 +140,11 @@ public class Picture extends SimplePicture
                 rightPixel = pixels[row]                       
                 [mirrorPoint - col + mirrorPoint];
                 rightPixel.setColor(leftPixel.getColor());
+                count++;
             }
         }
+        System.out.print(count);
+        return count;
     }
 
     /** copy from the passed fromPic to the
@@ -283,4 +286,72 @@ public class Picture extends SimplePicture
         }
     }
     
+    //method to mirror picture vertically
+    public void mirrorVerticalRightToLeft(){
+     Pixel[][] pixels = this.getPixels2D();     
+     Pixel leftPixel = null;     
+     Pixel rightPixel = null;     
+     int width = pixels[0].length;     
+     for(int r = 0; r < pixels.length; r++){
+         for(int c = 0; c < width / 2; c++){
+             leftPixel = pixels[r][c];         
+             rightPixel = pixels[r][width - 1 - c];         
+             rightPixel.setColor(leftPixel.getColor());       
+         }     
+     }     
+    }
+    
+    //method to mirror picture horizontally from top to bottom
+    public void mirrorHorizontal(){
+     Pixel[][] pixels = this.getPixels2D();     
+     Pixel topPixel = null;     
+     Pixel bottomPixel = null;     
+     int height = pixels.length;     
+     for(int r = 0; r < height/2; r++){
+         for(int c = 0; c < pixels[0].length; c++){
+             topPixel = pixels[r][c];         
+             bottomPixel = pixels[height-1-r][c];         
+             bottomPixel.setColor(topPixel.getColor());       
+         }     
+     }     
+    }
+    
+    //method to mirror picture horizontally from bottom to top
+    public void mirrorHorizontalBotToTop(){
+     Pixel[][] pixels = this.getPixels2D();     
+     Pixel topPixel = null;     
+     Pixel bottomPixel = null;     
+     int height = pixels.length;     
+     for(int r = height-1; r >=height/2; r--){
+         for(int c = 0; c < pixels[0].length; c++){
+             bottomPixel = pixels[r][c];         
+             topPixel = pixels[height-1-r][c];         
+             topPixel.setColor(bottomPixel.getColor());       
+         }     
+     }     
+    }
+    
+    //method to mirror arms on the snowman
+    public void mirrorArms(){
+     int mirrorPoint = 190;
+     int mirrorPoint2 = 195;
+     Pixel[][] pixels = this.getPixels2D();     
+     Pixel topPixel = null;     
+     Pixel bottomPixel = null;         
+     for(int r = 158; r<mirrorPoint; r++){
+         for(int c = 105; c < 170; c++){
+             bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
+             topPixel = pixels[r][c];         
+             bottomPixel.setColor(topPixel.getColor());       
+         }     
+     }
+     
+     for(int r = 170; r<mirrorPoint2; r++){
+         for(int c = 235; c < 293; c++){
+             bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
+             topPixel = pixels[r][c];         
+             bottomPixel.setColor(topPixel.getColor());       
+         }     
+     }
+    }
 } // this } is the end of class Picture, put all new methods before this
