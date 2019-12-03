@@ -253,7 +253,7 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     //method to turn picture to grayscale
     public void Grayscale(){
         Pixel[][] pixels = this.getPixels2D();
@@ -261,14 +261,14 @@ public class Picture extends SimplePicture
         for(Pixel[] rowArray : pixels){
             for(Pixel pixelObj : rowArray){
                 avg = (pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen())/3;
-                
+
                 pixelObj.setRed(avg);
                 pixelObj.setGreen(avg);
                 pixelObj.setBlue(avg);
             }
         }
     }
-    
+
     //method to make the fish clearer in the picture underwater
     public void fixUnderwater(){
         Pixel[][] pixels = this.getPixels2D();
@@ -285,73 +285,96 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     //method to mirror picture vertically
     public void mirrorVerticalRightToLeft(){
-     Pixel[][] pixels = this.getPixels2D();     
-     Pixel leftPixel = null;     
-     Pixel rightPixel = null;     
-     int width = pixels[0].length;     
-     for(int r = 0; r < pixels.length; r++){
-         for(int c = 0; c < width / 2; c++){
-             leftPixel = pixels[r][c];         
-             rightPixel = pixels[r][width - 1 - c];         
-             rightPixel.setColor(leftPixel.getColor());       
-         }     
-     }     
+        Pixel[][] pixels = this.getPixels2D();     
+        Pixel leftPixel = null;     
+        Pixel rightPixel = null;     
+        int width = pixels[0].length;     
+        for(int r = 0; r < pixels.length; r++){
+            for(int c = 0; c < width / 2; c++){
+                leftPixel = pixels[r][c];         
+                rightPixel = pixels[r][width - 1 - c];         
+                rightPixel.setColor(leftPixel.getColor());       
+            }     
+        }     
     }
-    
+
     //method to mirror picture horizontally from top to bottom
     public void mirrorHorizontal(){
-     Pixel[][] pixels = this.getPixels2D();     
-     Pixel topPixel = null;     
-     Pixel bottomPixel = null;     
-     int height = pixels.length;     
-     for(int r = 0; r < height/2; r++){
-         for(int c = 0; c < pixels[0].length; c++){
-             topPixel = pixels[r][c];         
-             bottomPixel = pixels[height-1-r][c];         
-             bottomPixel.setColor(topPixel.getColor());       
-         }     
-     }     
+        Pixel[][] pixels = this.getPixels2D();     
+        Pixel topPixel = null;     
+        Pixel bottomPixel = null;     
+        int height = pixels.length;     
+        for(int r = 0; r < height/2; r++){
+            for(int c = 0; c < pixels[0].length; c++){
+                topPixel = pixels[r][c];         
+                bottomPixel = pixels[height-1-r][c];         
+                bottomPixel.setColor(topPixel.getColor());       
+            }     
+        }     
     }
-    
+
     //method to mirror picture horizontally from bottom to top
     public void mirrorHorizontalBotToTop(){
-     Pixel[][] pixels = this.getPixels2D();     
-     Pixel topPixel = null;     
-     Pixel bottomPixel = null;     
-     int height = pixels.length;     
-     for(int r = height-1; r >=height/2; r--){
-         for(int c = 0; c < pixels[0].length; c++){
-             bottomPixel = pixels[r][c];         
-             topPixel = pixels[height-1-r][c];         
-             topPixel.setColor(bottomPixel.getColor());       
-         }     
-     }     
+        Pixel[][] pixels = this.getPixels2D();     
+        Pixel topPixel = null;     
+        Pixel bottomPixel = null;     
+        int height = pixels.length;     
+        for(int r = height-1; r >=height/2; r--){
+            for(int c = 0; c < pixels[0].length; c++){
+                bottomPixel = pixels[r][c];         
+                topPixel = pixels[height-1-r][c];         
+                topPixel.setColor(bottomPixel.getColor());       
+            }     
+        }     
     }
-    
+
     //method to mirror arms on the snowman
     public void mirrorArms(){
-     int mirrorPoint = 190;
-     int mirrorPoint2 = 195;
-     Pixel[][] pixels = this.getPixels2D();     
-     Pixel topPixel = null;     
-     Pixel bottomPixel = null;         
-     for(int r = 158; r<mirrorPoint; r++){
-         for(int c = 105; c < 170; c++){
-             bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
-             topPixel = pixels[r][c];         
-             bottomPixel.setColor(topPixel.getColor());       
-         }     
-     }
-     
-     for(int r = 170; r<mirrorPoint2; r++){
-         for(int c = 235; c < 293; c++){
-             bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
-             topPixel = pixels[r][c];         
-             bottomPixel.setColor(topPixel.getColor());       
-         }     
-     }
+        int mirrorPoint = 190;
+        int mirrorPoint2 = 195;
+        Pixel[][] pixels = this.getPixels2D();     
+        Pixel topPixel = null;     
+        Pixel bottomPixel = null;         
+        for(int r = 158; r<mirrorPoint; r++){
+            for(int c = 105; c < 170; c++){
+                bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
+                topPixel = pixels[r][c];         
+                bottomPixel.setColor(topPixel.getColor());       
+            }     
+        }
+
+        for(int r = 170; r<mirrorPoint2; r++){
+            for(int c = 235; c < 293; c++){
+                bottomPixel = pixels[mirrorPoint - r + mirrorPoint][c];         
+                topPixel = pixels[r][c];         
+                bottomPixel.setColor(topPixel.getColor());       
+            }     
+        }
     }
-} // this } is the end of class Picture, put all new methods before this
+
+    /*
+     * Write the method mirrorGull to mirror the seagull (“seagull.jpg”) 
+     * to the right so that there are two seagulls on the beach near each other. 
+     * Write a class (static) test method in PictureTester to test this new method 
+     * and call it in the main method. 
+     */
+    public void mirrorGull(){
+         int mirrorPoint = 343;     
+         Pixel leftPixel = null;     
+         Pixel rightPixel = null;    
+         Pixel[][] pixels = this.getPixels2D();
+         
+        // loop through the rows     
+        for (int row = 88; row < 324; row++)     {       
+            // loop from 239 to just before the mirror point       
+            for (int col = 239; col < mirrorPoint; col++)       {                  
+                leftPixel = pixels[row][col];               
+                rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];         
+                rightPixel.setColor(leftPixel.getColor());      
+            }
+        } 
+    }
+}// this } is the end of class Picture, put all new methods before this
