@@ -132,6 +132,22 @@ public class PictureTester
     seagull.explore();
   }
   
+  /** Method to test specCopy */
+  public static void testSpecCopy()
+  {
+    /*specCopy(Picture fromPic, 
+    int toStartRow, int toStartCol, int fromStartRow, 
+    int fromEndRow, int fromStartCol, int fromEndCol)
+    */
+   
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.specCopy(seagull, 0, 0, 200,330, 225, 341);
+    
+    //fix method in Picture class so that toPixels can be explored
+    seagull.
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -151,10 +167,10 @@ public class PictureTester
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    testSpecCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();

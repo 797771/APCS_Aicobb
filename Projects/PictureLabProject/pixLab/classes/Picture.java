@@ -377,4 +377,32 @@ public class Picture extends SimplePicture
             }
         } 
     }
+    
+    //allows to copy just part of fromPic
+    public void specCopy(Picture fromPic, 
+    int toStartRow, int toStartCol, int fromStartRow, 
+    int fromEndRow, int fromStartCol, int fromEndCol)
+    {
+        Pixel fromPixel = null;
+        Pixel toPixel = null;
+        Pixel[][] toPixels = this.getPixels2D();
+        Pixel[][] fromPixels = fromPic.getPixels2D();
+        for (int fromRow = fromStartRow, toRow = toStartRow; 
+        fromRow < fromEndRow &&
+        toRow < toPixels.length; 
+        fromRow++, toRow++)
+        {
+            for (int fromCol = fromStartCol, toCol = toStartCol; 
+            fromCol < fromEndCol &&
+            toCol < toPixels[0].length;  
+            fromCol++, toCol++)
+            {
+                fromPixel = fromPixels[fromRow][fromCol];
+                toPixel = toPixels[toRow][toCol];
+                toPixel.setColor(fromPixel.getColor());
+            }
+        }
+
+    }
+    
 }// this } is the end of class Picture, put all new methods before this
