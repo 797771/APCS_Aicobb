@@ -141,11 +141,11 @@ public class PictureTester
     */
    
     Picture seagull = new Picture("seagull.jpg");
+    Picture canvas = new Picture("640x480.jpg");
     seagull.explore();
-    seagull.specCopy(seagull, 0, 0, 200,330, 225, 341);
+    seagull.specCopy(seagull, canvas, 0, 0, 200, 330, 225, 341);
     
-    //fix method in Picture class so that toPixels can be explored
-    seagull.
+    canvas.explore();
   }
   
   /** Main method for testing.  Every class can have a main

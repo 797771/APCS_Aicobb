@@ -379,13 +379,13 @@ public class Picture extends SimplePicture
     }
     
     //allows to copy just part of fromPic
-    public void specCopy(Picture fromPic, 
+    public void specCopy(Picture fromPic, Picture toPic,
     int toStartRow, int toStartCol, int fromStartRow, 
     int fromEndRow, int fromStartCol, int fromEndCol)
     {
         Pixel fromPixel = null;
         Pixel toPixel = null;
-        Pixel[][] toPixels = this.getPixels2D();
+        Pixel[][] toPixels = toPic.getPixels2D();
         Pixel[][] fromPixels = fromPic.getPixels2D();
         for (int fromRow = fromStartRow, toRow = toStartRow; 
         fromRow < fromEndRow &&
@@ -405,4 +405,8 @@ public class Picture extends SimplePicture
 
     }
     
+    //copies at least 3 with diff manipulationns and one mirroring
+    public void myCollage(){
+        //specCopy(
+    }
 }// this } is the end of class Picture, put all new methods before this
