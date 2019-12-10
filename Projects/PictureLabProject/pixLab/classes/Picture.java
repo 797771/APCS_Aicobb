@@ -202,8 +202,11 @@ public class Picture extends SimplePicture
     {
         Pixel leftPixel = null;
         Pixel rightPixel = null;
+        Pixel topPixel = null;
+        Pixel botPixel = null;
         Pixel[][] pixels = this.getPixels2D();
         Color rightColor = null;
+        Color botColor = null;
         for (int row = 0; row < pixels.length; row++)
         {
             for (int col = 0; 
@@ -219,8 +222,38 @@ public class Picture extends SimplePicture
                     leftPixel.setColor(Color.WHITE);
             }
         }
+        
+       
     }
-
+    
+    /** Method to show large changes in color 
+     * @param edgeDist the distance for finding edges
+     */
+    public void edgeDetection2(int edgeDist)
+    {
+        Pixel topPixel = null;
+        Pixel botPixel = null;
+        Pixel[][] pixels = this.getPixels2D();
+        Color botColor = null;
+        
+        //compares changes from top to bottom
+        for (int row = 0; row < pixels.length-1; row++)
+        {
+            for (int col = 0; 
+            col < pixels[0].length-1; col++)
+            {
+                topPixel = pixels[row][col];
+                botPixel = pixels[row+1][col];
+                botColor = botPixel.getColor();
+                if (topPixel.colorDistance(botColor) > 
+                edgeDist)
+                    topPixel.setColor(Color.BLACK);
+                else
+                    topPixel.setColor(Color.WHITE);
+            }
+        }
+    }
+    
     /* Main method for testing - each class in Java can have a main 
      * method 
      */
@@ -238,6 +271,17 @@ public class Picture extends SimplePicture
         for(Pixel[] rowArray : pixels){
             for(Pixel pixelObj : rowArray){
                 pixelObj.setRed(0);
+                pixelObj.setGreen(0);
+            }
+        }
+    }
+    
+    //method to keep only red values in picture
+    public void keepOnlyRed(){
+        Pixel[][] pixels = this.getPixels2D();
+        for(Pixel[] rowArray : pixels){
+            for(Pixel pixelObj : rowArray){
+                pixelObj.setBlue(0);
                 pixelObj.setGreen(0);
             }
         }
@@ -362,11 +406,11 @@ public class Picture extends SimplePicture
      * and call it in the main method. 
      */
     public void mirrorGull(){
-         int mirrorPoint = 343;     
-         Pixel leftPixel = null;     
-         Pixel rightPixel = null;    
-         Pixel[][] pixels = this.getPixels2D();
-         
+        int mirrorPoint = 343;     
+        Pixel leftPixel = null;     
+        Pixel rightPixel = null;    
+        Pixel[][] pixels = this.getPixels2D();
+
         // loop through the rows     
         for (int row = 88; row < 324; row++)     {       
             // loop from 239 to just before the mirror point       
@@ -377,7 +421,7 @@ public class Picture extends SimplePicture
             }
         } 
     }
-    
+
     //allows to copy just part of fromPic
     public void specCopy(Picture fromPic, Picture toPic,
     int toStartRow, int toStartCol, int fromStartRow, 
@@ -404,9 +448,37 @@ public class Picture extends SimplePicture
         }
 
     }
+
+
+    public void mirrorVerticalSpec(int fromStartRow,int fromEndRow, int picL)
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        int width = pixels[0].length;
+        for (int row = fromStartRow; row < fromEndRow; row++)
+        {
+            for (int col = 0; col < picL; col++)
+            {
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[row][picL-col -1];
+                rightPixel.setColor(leftPixel.getColor());
+            }
+        } 
+    }
+    
     
     //copies at least 3 with diff manipulationns and one mirroring
-    public void myCollage(){
-        //specCopy(
+    public void myCollage(Picture fromPic, Picture toPic){
+        specCopy(fromPic, toPic, 0, 0, 200, 330, 225, 341);
+        toPic.mirrorVerticalSpec(0, 140, 115);
+        
+        fromPic.zeroBlue();
+        specCopy(fromPic, toPic, 150, 0, 200, 330, 225, 341);
+        
+        keepOnlyRed();
+        negate();
+        specCopy(fromPic, toPic, 300, 0, 200, 330, 225, 341);
     }
+
 }// this } is the end of class Picture, put all new methods before this

@@ -37,19 +37,20 @@ public class PictureTester
     temple.explore();
   }
   
-  /** Method to test the collage method */
-  public static void testCollage()
-  {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
-    canvas.explore();
-  }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+  
+  /** Method to test edgeDetection2 */
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -69,7 +70,7 @@ public class PictureTester
     beach.explore();
   }
   
-   /** Method to test graysclae */
+   /** Method to test grayscale */
   public static void testGrayscale()
   {
     Picture beach = new Picture("beach.jpg");
@@ -148,6 +149,17 @@ public class PictureTester
     canvas.explore();
   }
   
+  /** Method to test myCollage */
+  public static void testMyCollage()
+  {
+    Picture seagull = new Picture("seagull.jpg");
+    Picture canvas = new Picture("640x480.jpg");
+    seagull.explore();
+    seagull.myCollage(seagull,canvas);
+    
+    canvas.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -169,10 +181,10 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
-    testSpecCopy();
+    //testMyCollage();
+    //testSpecCopy();
     //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
