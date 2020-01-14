@@ -246,10 +246,16 @@ public class Picture extends SimplePicture
                 botPixel = pixels[row+1][col];
                 botColor = botPixel.getColor();
                 if (topPixel.colorDistance(botColor) > 
-                edgeDist)
-                    topPixel.setColor(Color.BLACK);
-                else
-                    topPixel.setColor(Color.WHITE);
+                edgeDist){
+                    topPixel.setRed(topPixel.getRed()-15);
+                    topPixel.setBlue(topPixel.getBlue()-15);
+                    topPixel.setRed(topPixel.getBlue()-15);
+                }
+                else{
+                    topPixel.setRed(topPixel.getRed()+15);
+                    topPixel.setBlue(topPixel.getBlue()+15);
+                    topPixel.setRed(topPixel.getBlue()+15);
+                }
             }
         }
     }

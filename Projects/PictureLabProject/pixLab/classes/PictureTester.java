@@ -41,17 +41,18 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+    Picture ME = new Picture("ME.jpg");
+    ME.edgeDetection(10);
+    ME.explore();
   }
   
   /** Method to test edgeDetection2 */
   public static void testEdgeDetection2()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection2(10);
-    swan.explore();
+    Picture ME = new Picture("ME.jpg");
+    ME.explore();
+    ME.edgeDetection2(10);
+    ME.explore();
   }
   
    /** Method to test keepOnlyBlue */
